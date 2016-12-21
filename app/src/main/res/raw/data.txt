@@ -1,0 +1,64 @@
+{
+	"images": [
+		{
+			"id": 1,
+			"name": "Image 1",
+			"url": "https://s3-us-west-2.amazonaws.com/muchtrivia-prod/ImageLibrary%2FCategories%2Fd66cc94a-1f3f-4053-aaf1-a7793e4b1c6e.jpg",
+			"price": 100 
+		},
+		{
+			"id": 2,
+			"name": "Image 2",
+			"url": "https://s3-us-west-2.amazonaws.com/muchtrivia-prod/ImageLibrary%2FCategories_Won%2Fa693da0d-225d-461c-89f7-0d20dc848fea.jpg",
+			"price": 130 
+		},
+		{
+			"id": 3,
+			"name": "Image 3",
+			"url": "https://s3-us-west-2.amazonaws.com/muchtrivia-prod/ImageLibrary%2FCategories_Lost%2F0b368e74-0cc6-4456-b91a-8790c14b41a1.jpg",
+			"price": 120 
+		},
+		{
+			"id": 4,
+			"name": "Image 4",
+			"url": "https://s3-us-west-2.amazonaws.com/muchtrivia-prod/ImageLibrary%2FCategories%2F5d33d838-ad06-443e-8955-03196754eb10.jpg",
+			"price": 150 
+		},
+		{
+			"id": 5,
+			"name": "Image 5",
+			"url": "https://s3-us-west-2.amazonaws.com/muchtrivia-prod/ImageLibrary%2FCategories%2F1b20d7cb-bfd1-4cf4-abe8-855983dceccb.jpg",
+			"price": 120 
+		},
+		{
+			"id": 6,
+			"name": "Image 6",
+			"url": "https://s3-us-west-2.amazonaws.com/muchtrivia-prod/ImageLibrary%2FCategories%2F14e58beb-ab5e-4cb0-89ad-1633c67ec70b.jpg",
+			"price": 100 
+		},
+		{
+			"id": 7,
+			"name": "Image 7",
+			"url": "https://s3-us-west-2.amazonaws.com/muchtrivia-prod/ImageLibrary%2FCategories%2Fcfac3ce7-3236-407f-b2fc-3732cbb5b1de.jpg",
+			"price": 120 
+		},
+		{
+			"id": 8,
+			"name": "Image 8",
+			"url": "https://s3-us-west-2.amazonaws.com/muchtrivia-prod/ImageLibrary%2FCategories_Won%2F93653c53-52d7-4950-bc2f-335b84335c74.jpg",
+			"price": 99 
+		},
+		{
+			"id": 9,
+			"name": "Image 9",
+			"url": "https://s3-us-west-2.amazonaws.com/muchtrivia-prod/ImageLibrary%2FCategories%2F936d464a-11f8-4d6a-8924-6db1ba478348.png",
+			"price": 200
+		}
+	]
+}
+
+
+
+
+
+
