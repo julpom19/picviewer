@@ -1,13 +1,8 @@
-package codewizards.com.ua.picviewer;
+package codewizards.com.ua.picviewer.model;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.util.List;
-
-import codewizards.com.ua.picviewer.model.Good;
-import codewizards.com.ua.picviewer.model.GoodJSONParser;
-import codewizards.com.ua.picviewer.server_mock.DataProvider;
 
 /**
  * Created by Интернет on 21.12.2016.

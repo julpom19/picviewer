@@ -1,28 +1,26 @@
 package codewizards.com.ua.picviewer;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.List;
 
+import codewizards.com.ua.picviewer.model.DataContainer;
 import codewizards.com.ua.picviewer.model.Good;
 import codewizards.com.ua.picviewer.view.GoodAdapter;
+import codewizards.com.ua.picviewer.view.ItemClickListener;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,5 +72,10 @@ public class MainActivity extends AppCompatActivity
         GoodAdapter goodAdapter = new GoodAdapter(MainActivity.this, list);
         rvContacts.setAdapter(goodAdapter);
         rvContacts.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public void onClick(Good good) {
+        Log.d("myTag", good.toString());
     }
 }

@@ -1,4 +1,4 @@
-package codewizards.com.ua.picviewer.server_mock;
+package codewizards.com.ua.picviewer.model;
 
 import android.content.Context;
 import android.content.res.Resources;

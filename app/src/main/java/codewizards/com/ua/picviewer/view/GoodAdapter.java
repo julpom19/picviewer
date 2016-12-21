@@ -12,8 +12,11 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import codewizards.com.ua.picviewer.MainActivity;
 import codewizards.com.ua.picviewer.R;
 import codewizards.com.ua.picviewer.model.Good;
+
+import static android.support.v7.widget.RecyclerView.NO_POSITION;
 
 /**
  * Created by Интернет on 21.12.2016.
@@ -32,10 +35,19 @@ public class GoodAdapter extends RecyclerView.Adapter<GoodAdapter.ViewHolder> {
     public GoodAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-
         View contactView = inflater.inflate(R.layout.item_good, parent, false);
 
-        ViewHolder viewHolder = new ViewHolder(contactView);
+        final MainActivity itemClickListener = (MainActivity) context;
+        final ViewHolder viewHolder = new ViewHolder(contactView);
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = viewHolder.getAdapterPosition();
+                if (pos != NO_POSITION) {
+                    itemClickListener.onClick(listOfGoods.get(pos));
+                }
+            };
+        });
         return viewHolder;
     }
 
