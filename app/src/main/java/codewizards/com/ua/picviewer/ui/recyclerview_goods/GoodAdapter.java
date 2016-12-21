@@ -1,4 +1,4 @@
-package codewizards.com.ua.picviewer.view;
+package codewizards.com.ua.picviewer.ui.recyclerview_goods;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import codewizards.com.ua.picviewer.MainActivity;
+import codewizards.com.ua.picviewer.ui.activities.MainActivity;
 import codewizards.com.ua.picviewer.R;
 import codewizards.com.ua.picviewer.model.Good;
 
@@ -44,7 +44,7 @@ public class GoodAdapter extends RecyclerView.Adapter<GoodAdapter.ViewHolder> {
             public void onClick(View view) {
                 int pos = viewHolder.getAdapterPosition();
                 if (pos != NO_POSITION) {
-                    itemClickListener.onClick(listOfGoods.get(pos));
+                    itemClickListener.onClick(pos);
                 }
             };
         });

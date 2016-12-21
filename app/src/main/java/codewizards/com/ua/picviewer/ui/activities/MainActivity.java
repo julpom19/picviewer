@@ -1,6 +1,8 @@
-package codewizards.com.ua.picviewer;
+package codewizards.com.ua.picviewer.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,10 +16,12 @@ import android.view.MenuItem;
 
 import java.util.List;
 
+import codewizards.com.ua.picviewer.Const;
+import codewizards.com.ua.picviewer.R;
 import codewizards.com.ua.picviewer.model.DataContainer;
 import codewizards.com.ua.picviewer.model.Good;
-import codewizards.com.ua.picviewer.view.GoodAdapter;
-import codewizards.com.ua.picviewer.view.ItemClickListener;
+import codewizards.com.ua.picviewer.ui.recyclerview_goods.GoodAdapter;
+import codewizards.com.ua.picviewer.ui.recyclerview_goods.ItemClickListener;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, ItemClickListener {
@@ -75,7 +79,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onClick(Good good) {
-        Log.d("myTag", good.toString());
+    public void onClick(int posOfGood) {
+        Intent intent = new Intent(MainActivity.this, PicActivity.class);
+        intent.putExtra(Const.EXTRA_POS_OF_GOOD, posOfGood);
+        startActivity(intent);
     }
 }

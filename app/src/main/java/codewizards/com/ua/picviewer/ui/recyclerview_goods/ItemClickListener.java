@@ -1,4 +1,4 @@
-package codewizards.com.ua.picviewer.view;
+package codewizards.com.ua.picviewer.ui.recyclerview_goods;
 
 import codewizards.com.ua.picviewer.model.Good;
 
@@ -7,5 +7,5 @@ import codewizards.com.ua.picviewer.model.Good;
  */
 
 public interface ItemClickListener {
-    void onClick(Good good);
+    void onClick(int posOfGood);
 }
