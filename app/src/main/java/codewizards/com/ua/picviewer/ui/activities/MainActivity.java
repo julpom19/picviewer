@@ -3,6 +3,7 @@ package codewizards.com.ua.picviewer.ui.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,6 +21,7 @@ import codewizards.com.ua.picviewer.Const;
 import codewizards.com.ua.picviewer.R;
 import codewizards.com.ua.picviewer.model.DataContainer;
 import codewizards.com.ua.picviewer.model.Good;
+import codewizards.com.ua.picviewer.ui.fragments.FragmentGallery;
 import codewizards.com.ua.picviewer.ui.recyclerview_goods.GoodAdapter;
 import codewizards.com.ua.picviewer.ui.recyclerview_goods.ItemClickListener;
 
@@ -41,8 +43,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        showListOfGoods();
+        Fragment fragment = new FragmentGallery();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_placeholder, fragment).commit();
     }
 
     @Override
@@ -57,25 +59,19 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
+        int id = item.getItemId();
+        Fragment fragment = null;
         if (id == R.id.nav_gallery) {
-            //showListOfGoods();
+            fragment = new FragmentGallery();
         } else if (id == R.id.nav_exit) {
             finish();
+            return true;
         }
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_placeholder, fragment).commit();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    private void showListOfGoods() {
-        List<Good> list = DataContainer.getInstance().getListOfGoods(MainActivity.this);
-        RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rv_goods);
-        GoodAdapter goodAdapter = new GoodAdapter(MainActivity.this, list);
-        rvContacts.setAdapter(goodAdapter);
-        rvContacts.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
