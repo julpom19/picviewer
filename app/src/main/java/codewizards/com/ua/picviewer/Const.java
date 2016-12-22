@@ -6,4 +6,5 @@ package codewizards.com.ua.picviewer;
 
 public class Const {
     public static final String EXTRA_POS_OF_GOOD = "EXTRA_POS_OF_GOOD";
+    public static final String HEROKU_APP_URL = "https://shrouded-ridge-76885.herokuapp.com/";
 }

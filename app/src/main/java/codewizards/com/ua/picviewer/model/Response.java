@@ -7,6 +7,7 @@ import java.util.List;
  */
 
 public class Response {
+    private boolean isSuccessful;
     private List<Good> images;
 
     public List<Good> getListOfGoods() {
@@ -15,5 +16,13 @@ public class Response {
 
     public void setListOfGoods(List<Good> images) {
         this.images = images;
+    }
+
+    public boolean isSuccessful() {
+        return isSuccessful;
+    }
+
+    public void setSuccessful(boolean successful) {
+        isSuccessful = successful;
     }
 }

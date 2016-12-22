@@ -2,11 +2,7 @@ package codewizards.com.ua.picviewer.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,14 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import java.util.List;
 
 import codewizards.com.ua.picviewer.Const;
 import codewizards.com.ua.picviewer.R;
-import codewizards.com.ua.picviewer.model.DataContainer;
-import codewizards.com.ua.picviewer.model.Good;
 import codewizards.com.ua.picviewer.ui.fragments.FragmentGallery;
-import codewizards.com.ua.picviewer.ui.recyclerview_goods.GoodAdapter;
 import codewizards.com.ua.picviewer.ui.recyclerview_goods.ItemClickListener;
 
 public class MainActivity extends AppCompatActivity
