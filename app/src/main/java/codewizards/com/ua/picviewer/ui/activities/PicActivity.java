@@ -20,14 +20,18 @@ import codewizards.com.ua.picviewer.model.Good;
  */
 
 public class PicActivity extends AppCompatActivity implements DataObserver {
-    ImageView ivPic;
+    private ImageView ivPic;
     private int posOfGood = -1;
+    private DataContainer dataContainer;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pic);
-        DataContainer.getInstance().registerObserver(this);
         ivPic = (ImageView) findViewById(R.id.iv_pic_full);
+
+        dataContainer = DataContainer.getInstance();
+        dataContainer.registerObserver(this);
+
         posOfGood = getIntent().getIntExtra(Const.EXTRA_POS_OF_GOOD, -1);
         if(posOfGood != -1) {
             showPic();
@@ -35,7 +39,7 @@ public class PicActivity extends AppCompatActivity implements DataObserver {
     }
 
     private void showPic() {
-        List<Good> list = DataContainer.getInstance().getListOfGoods();
+        List<Good> list = dataContainer.getListOfGoods();
         if(list != null) {
             Good good = list.get(posOfGood);
             Glide.with(PicActivity.this).load(good.getUrl()).placeholder(R.mipmap.ic_placeholder).
@@ -45,9 +49,15 @@ public class PicActivity extends AppCompatActivity implements DataObserver {
 
     @Override
     public void update() {
-        List<Good> list = DataContainer.getInstance().getListOfGoods();
+        List<Good> list = dataContainer.getListOfGoods();
         if(posOfGood != -1) {
             showPic();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        DataContainer.getInstance().unregisterObserver(this);
+        super.onDestroy();
     }
 }

@@ -7,4 +7,5 @@ package codewizards.com.ua.picviewer.data_workers;
 public interface DataProvider {
     void registerObserver(DataObserver observer);
     void notifyObservers();
+    void unregisterObserver(DataObserver observer);
 }

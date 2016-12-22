@@ -77,4 +77,8 @@ public class GoodAdapter extends RecyclerView.Adapter<GoodAdapter.ViewHolder> {
             tvPrice = (TextView) itemView.findViewById(R.id.tv_price);
         }
     }
+
+    public void setListOfGoods(List<Good> listOfGoods) {
+        this.listOfGoods = listOfGoods;
+    }
 }
